@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brayan Elguedo - Links</title>
+    <link rel="preload" href="fonts/BlinkMacSystemFont-Black.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'BlinkMacSystemFont';
+            src: url('fonts/BlinkMacSystemFont-Black.woff2') format('woff2');
+            font-weight: 900;
+            font-display: swap;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: white;
+            position: relative;
+        }
+
+        /* Background with video */
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 46, 77, 0.5) 0%, rgba(212, 175, 55, 0.3) 100%);
+            backdrop-filter: brightness(0.8);
+        }
+
+        /* Fallback image */
+        .fallback-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main container */
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Picture */
+        .profile-container {
+            margin-bottom: 20px;
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .profile-pic {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #D4AF37;
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+        }
+
+        /* Description */
+        .description {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: fadeIn 1s ease-out 0.2s backwards;
+        }
+
+        .description h1 {
+            font-size: 1.5em;
+            margin-bottom: 12px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+            font-weight: 900;
+            color: white;
+        }
+
+        .description p {
+            font-size: 0.95em;
+            line-height: 1.6;
+            opacity: 0.95;
+            white-space: pre-line;
+        }
+
+        /* Social media section */
+        .social-section {
+            margin-bottom: 30px;
+            width: 100%;
+            animation: fadeIn 1s ease-out 0.4s backwards;
+        }
+
+        .social-title {
+            text-align: center;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8em;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(212, 175, 55, 0.3);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .social-icon.instagram:hover {
+            border-color: #E4405F;
+            background: rgba(228, 64, 95, 0.2);
+        }
+
+        .social-icon.google:hover {
+            border-color: #FBBC04;
+            background: rgba(251, 188, 4, 0.2);
+        }
+
+        .social-icon.whatsapp:hover {
+            border-color: #25d366;
+            background: rgba(37, 211, 102, 0.2);
+        }
+
+        /* Main link */
+        .main-link {
+            width: 100%;
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out 0.6s backwards;
+        }
+
+        .link-button {
+            display: block;
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, rgba(10, 46, 77, 0.25) 0%, rgba(212, 175, 55, 0.25) 100%);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(212, 175, 55, 0.5);
+            border-radius: 15px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .link-button:hover {
+            transform: translateY(-3px);
+            background: linear-gradient(135deg, rgba(10, 46, 77, 0.35) 0%, rgba(212, 175, 55, 0.35) 100%);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.5);
+        }
+
+        .link-button i {
+            margin-right: 10px;
+        }
+
+        /* Boats section */
+        .boats-section {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .boats-title {
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out 0.8s backwards;
+            font-family: 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .boats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            animation: fadeIn 1s ease-out 1s backwards;
+        }
+
+        .boat-card {
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1.5px solid rgba(212, 175, 55, 0.3);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideInRight 0.6s ease-out backwards;
+        }
+
+        .boat-card:nth-child(1) { animation-delay: 0.9s; }
+        .boat-card:nth-child(2) { animation-delay: 1s; }
+        .boat-card:nth-child(3) { animation-delay: 1.1s; }
+        .boat-card:nth-child(4) { animation-delay: 1.2s; }
+        .boat-card:nth-child(5) { animation-delay: 1.3s; }
+        .boat-card:nth-child(6) { animation-delay: 1.4s; }
+
+        .boat-card:hover {
+            transform: translateY(-5px);
+            background: rgba(212, 175, 55, 0.2);
+            border-color: #D4AF37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .boat-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .boat-info {
+            padding: 15px;
+        }
+
+        .boat-name {
+            font-size: 1.2em;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: white;
+        }
+
+        .boat-specs {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        .boat-category {
+            font-size: 0.85em;
+            color: #D4AF37;
+            font-weight: 600;
+        }
+
+        /* Reviews Section */
+        .reviews-section {
+            width: 100%;
+            margin-bottom: 30px;
+            padding: 30px 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            animation: fadeIn 1s ease-out 0.7s backwards;
+        }
+
+        .reviews-title {
+            text-align: center;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            font-family: 'BlinkMacSystemFont', 'Segoe UI', sans-serif;
+            font-weight: 900;
+            color: white;
+        }
+
+        .reviews-description {
+            text-align: center;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 500px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        #reviews-container {
+            margin-top: 20px;
+        }
+
+        /* WhatsApp Contact Button */
+        .whatsapp-contact {
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-out 1.5s backwards;
+        }
+
+        .whatsapp-contact-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 18px 30px;
+            background: linear-gradient(135deg, #25D366 0%, #20C55A 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .whatsapp-contact-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: linear-gradient(135deg, #20C55A 0%, #1BAF4E 100%);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+        }
+
+        .whatsapp-contact-btn i {
+            font-size: 1.3em;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            text-align: center;
+            opacity: 0.7;
+            font-size: 0.9em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 15px;
+            }
+
+            .profile-pic {
+                width: 180px;
+                height: 180px;
+            }
+
+            .description h1 {
+                font-size: 1.2em;
+            }
+
+            .description p {
+                font-size: 0.9em;
+            }
+
+            .social-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5em;
+            }
+
+            .boats-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .boat-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Background with video -->
+    <div class="video-background">
+        <video id="bg-video" autoplay loop muted playsinline>
+            <source src="https://experienciacartagena.com/wp-content/uploads/2025/10/videofondo.mp4" type="video/mp4">
+        </video>
+        <img class="fallback-image" id="fallback-img" src="" alt="" style="display: none;">
+        <div class="video-overlay"></div>
+    </div>
+
+    <!-- Main container -->
+    <div class="container">
+        <!-- Profile Picture -->
+        <div class="profile-container">
+            <img class="profile-pic" src="img/profile.jpg" alt="Brayan Elguedo">
+        </div>
+
+        <!-- Description -->
+        <div class="description">
+            <h1>Brayan Elguedo | Concierge | Luxury Travel Advisor</h1>
+            <p>🗝️ #1 Concierge in Cartagena, Colombia🇨🇴📍
+✈️Luxury Travel Advisor
+🥇Get the best with the best!
+📲 Book your experience! ⤵️⤵️⤵️</p>
+        </div>
+
+        <!-- Social Media -->
+        <div class="social-section">
+            <h3 class="social-title">Follow Me</h3>
+            <div class="social-links">
+                <a href="https://www.instagram.com/brayanelguedo/" target="_blank" class="social-icon instagram" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://share.google/t4YXrJJ1rt7kTSlQY" target="_blank" class="social-icon google" title="Google Reviews - 5 Stars">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="https://wa.me/573146263274" target="_blank" class="social-icon whatsapp" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Website Link -->
+        <div class="main-link">
+            <a href="https://brayanrentals.com/" target="_blank" class="link-button">
+                <i class="fas fa-globe"></i> Visit My Website
+            </a>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="reviews-section">
+            <h2 class="reviews-title">⭐ Excellent Google Reviews</h2>
+            <p class="reviews-description">Don't just take my word for it - see what my clients say about their luxury experiences with BrayanRentals.</p>
+            <div id="reviews-container">
+                <script defer async src='https://cdn.trustindex.io/loader.js?fc60e4161b0f445ce306aafca2e'></script>
+            </div>
+        </div>
+
+        <!-- Boats Section -->
+        <div class="boats-section">
+            <h3 class="boats-title">Featured Yachts & Boats</h3>
+            <div class="boats-grid" id="boats-container">
+                <!-- Boats will be inserted here by JavaScript -->
+            </div>
+        </div>
+
+        <!-- WhatsApp Contact Button -->
+        <div class="whatsapp-contact">
+            <a href="https://wa.me/573146263274" target="_blank" class="whatsapp-contact-btn">
+                <i class="fab fa-whatsapp"></i>
+                Contact Me on WhatsApp
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 Brayan Elguedo - Luxury Concierge & Travel Advisor</p>
+        </div>
+    </div>
+
+    <script src="boats.js"></script>
+    <script>
+        // Render featured boats (first 6)
+        function renderFeaturedBoats() {
+            const container = document.getElementById('boats-container');
+            const featuredBoats = boats.slice(0, 6);
+
+            featuredBoats.forEach(boat => {
+                const card = document.createElement('div');
+                card.className = 'boat-card';
+
+                const mainImage = boat.images[0];
+
+                card.innerHTML = `
+                    <img src="${mainImage}" alt="${boat.name}" class="boat-image">
+                    <div class="boat-info">
+                        <h3 class="boat-name">${boat.name}</h3>
+                        <div class="boat-specs">
+                            <span>📏 ${boat.size}</span>
+                            <span>👥 ${boat.capacity}</span>
+                        </div>
+                        <p class="boat-category">${boat.category}</p>
+                    </div>
+                `;
+
+                // Make card clickable - link to WhatsApp
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => {
+                    window.open(`https://wa.me/573146263274?text=Hello,%20I%20came%20from%20your%20link%20page%20and%20I'm%20interested%20in%20${encodeURIComponent(boat.name)}`, '_blank');
+                });
+
+                container.appendChild(card);
+            });
+        }
+
+        // Video and fallback image handling
+        const video = document.getElementById('bg-video');
+        const fallbackImg = document.getElementById('fallback-img');
+
+        // Detect if mobile
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+        // Load fallback image
+        function loadFallbackImage() {
+            fallbackImg.src = 'img/fondosss.jpg';
+            fallbackImg.style.display = 'block';
+            video.style.display = 'none';
+        }
+
+        // Detect video error
+        video.addEventListener('error', function() {
+            console.log('Error loading video, using fallback image');
+            loadFallbackImage();
+        });
+
+        // If video doesn't load in 5 seconds, use fallback
+        setTimeout(function() {
+            if (video.readyState === 0) {
+                console.log('Video not loaded in time, using fallback image');
+                loadFallbackImage();
+            }
+        }, 5000);
+
+        // Pause/resume video when page is not visible
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                video.pause();
+            } else {
+                video.play();
+            }
+        });
+
+        // Render boats when page loads
+        document.addEventListener('DOMContentLoaded', renderFeaturedBoats);
+    </script>
+</body>
+
+</html>

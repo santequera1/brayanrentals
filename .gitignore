@@ -1,0 +1,25 @@
+# Bandeja de entrada de actualizaciones (Drive)
+# Se procesa con `node normalize-actualizaciones.cjs` y luego se borra.
+actualizaciones/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backups locales
+*.bak
+*.backup
+*.tmp

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Transfers in Cartagena - BrayanRentals</title>
+    <meta name="description" content="Private transfers in Cartagena. Premium SUVs, vans, Sprinters and Mercedes-Benz vehicles for airport pickups, city tours and group transportation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="luxury.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="index.html"><div class="logo-header">Brayan<span>Rentals</span></div></a>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="private-boats-and-yachts.html" class="nav-item">Yachts &amp; Boats</a>
+                <a href="transfers.html" class="nav-item active">Transfers</a>
+                <a href="day-trips.html" class="nav-item">Day Trips</a>
+                <div class="language-switcher">
+                    <a href="transfers.html" class="lang-btn active">EN</a>
+                    <a href="traslados.html" class="lang-btn">ES</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- WhatsApp Floating -->
+    <a href="https://wa.me/573146263274" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="section-container page-hero-content">
+            <p class="hero-eyebrow">Private Transfers</p>
+            <h1>Travel Cartagena in Comfort</h1>
+            <p class="page-hero-sub">Mercedes-Benz Sprinter, premium SUVs and modern vans — driven by trusted, English-speaking chauffeurs.</p>
+        </div>
+    </section>
+
+    <!-- Filters / Intro -->
+    <section class="boats-section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">OUR FLEET</p>
+                <h2 class="section-title">Choose Your Vehicle</h2>
+                <p class="section-description">From a quiet airport pickup to a 18-passenger group transfer — we have the right vehicle, freshly detailed, ready when you land.</p>
+            </div>
+
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">Vehicle Type</label>
+                        <select id="filterType" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="SUV">SUV</option>
+                            <option value="Premium Van">Premium Van</option>
+                            <option value="Van">Van</option>
+                            <option value="Mini-bus">Mini-bus</option>
+                            <option value="Sprinter Van">Sprinter Van</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Number of Passengers</label>
+                        <select id="filterCapacity" class="filter-select">
+                            <option value="">Any Capacity</option>
+                            <option value="2">Up to 2 People</option>
+                            <option value="6">Up to 6 People</option>
+                            <option value="8">Up to 8 People</option>
+                            <option value="12">Up to 12 People</option>
+                            <option value="18">Up to 18 People</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn filter-btn-secondary" onclick="clearFilters()">Clear Filters</button>
+                    <button class="filter-btn filter-btn-primary" onclick="applyFilters()">Apply Filters</button>
+                </div>
+            </div>
+
+            <div id="transfers-container" class="boats-grid"></div>
+        </div>
+    </section>
+
+    <!-- Quote Form -->
+    <section class="consultation-form">
+        <div class="form-container">
+            <h2 class="form-title">Book Your Transfer</h2>
+            <p class="form-description">Tell us your trip and we'll send the request to WhatsApp.</p>
+            <form id="transferForm" class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Vehicle Type</label>
+                    <select id="formVehicle" class="form-select" required>
+                        <option value="">Select vehicle</option>
+                        <option value="SUV (1-2 pax)">SUV (1-2 pax)</option>
+                        <option value="Premium Van Vito (2-6 pax)">Premium Van Vito (2-6 pax)</option>
+                        <option value="Van Traffic (3-8 pax)">Van Traffic (3-8 pax)</option>
+                        <option value="Mini-bus (8-12 pax)">Mini-bus (8-12 pax)</option>
+                        <option value="Sprinter (13-18 pax)">Sprinter (13-18 pax)</option>
+                        <option value="Other / Not sure">Other / Not sure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Pickup Location</label>
+                    <input type="text" id="formPickup" class="form-input" placeholder="Airport, hotel, address…" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Drop-off Location</label>
+                    <input type="text" id="formDropoff" class="form-input" placeholder="Where to?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Passengers</label>
+                    <input type="number" id="formPax" class="form-input" min="1" max="18" placeholder="How many people?" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Date &amp; Time</label>
+                    <input type="datetime-local" id="formWhen" class="form-input" required>
+                </div>
+                <button type="submit" class="form-submit">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Send to WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="section-container">
+            <div class="footer-logo">BrayanRentals</div>
+            <p class="footer-text">Luxury Concierge &amp; Travel Advisor in Cartagena, Colombia 🇨🇴</p>
+            <div class="footer-bottom"><p>&copy; 2026 BrayanRentals. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="transfers.js"></script>
+    <script src="catalog-render.js"></script>
+    <script>
+        const I18N = {
+            bookCta: 'Book via WhatsApp',
+            ctaText: name => `Hello, I came from your website and I'd like to book the ${name} transfer.`,
+            formGreeting: 'Hello! I would like to request a transfer:',
+            labels: {
+                vehicle: 'Vehicle', pickup: 'Pickup', dropoff: 'Drop-off',
+                pax: 'Passengers', when: 'Date & Time',
+            },
+            spec: { type: '🚙', capacity: '👥' },
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTransfers(transfers);
+        });
+
+        function applyFilters() {
+            const t = document.getElementById('filterType').value;
+            const c = parseInt(document.getElementById('filterCapacity').value || '0');
+            renderTransfers(transfers.filter(v => {
+                if (t && v.type !== t) return false;
+                if (c && v.maxPax > c) return false;
+                return true;
+            }));
+        }
+        function clearFilters() {
+            document.getElementById('filterType').value = '';
+            document.getElementById('filterCapacity').value = '';
+            renderTransfers(transfers);
+        }
+
+        document.getElementById('transferForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const v = id => document.getElementById(id).value;
+            const msg = `${I18N.formGreeting}\n\n${I18N.labels.vehicle}: ${v('formVehicle')}\n${I18N.labels.pickup}: ${v('formPickup')}\n${I18N.labels.dropoff}: ${v('formDropoff')}\n${I18N.labels.pax}: ${v('formPax')}\n${I18N.labels.when}: ${v('formWhen')}`;
+            window.open(`https://wa.me/573146263274?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+
+        // Hamburger
+        const hb = document.getElementById('hamburger'), nm = document.getElementById('navMenu');
+        hb.addEventListener('click', () => { hb.classList.toggle('active'); nm.classList.toggle('active'); });
+    </script>
+</body>
+</html>

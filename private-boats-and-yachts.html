@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Boats and Yachts in Cartagena - BrayanRentals</title>
+    <meta name="description" content="Private boats, speedboats and luxury yachts in Cartagena. Curated fleet from 28 to 82 feet — daily charters with captain, hostess and full concierge.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="luxury.css">
+    <style>
+        .page-hero { background-image: linear-gradient(rgba(10,46,77,.4), rgba(10,46,77,.6)), url(img/portadayates.jpg); background-size: cover; background-position: center; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html"><div class="logo-header">Brayan<span>Rentals</span></div></a>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="private-boats-and-yachts.html" class="nav-item active">Yachts &amp; Boats</a>
+                <a href="transfers.html" class="nav-item">Transfers</a>
+                <a href="day-trips.html" class="nav-item">Day Trips</a>
+                <div class="language-switcher">
+                    <a href="private-boats-and-yachts.html" class="lang-btn active">EN</a>
+                    <a href="yates-privados-y-yates.html" class="lang-btn">ES</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <a href="https://wa.me/573146263274" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <section class="page-hero">
+        <div class="page-hero-overlay"></div>
+        <div class="section-container page-hero-content">
+            <p class="hero-eyebrow">Private Boats &amp; Yachts</p>
+            <h1>Luxury Water Experiences</h1>
+            <p class="page-hero-sub">A curated fleet from 28 to 82 feet — chartered for an unforgettable day in the Caribbean.</p>
+        </div>
+    </section>
+
+    <section class="boats-section">
+        <div class="section-container">
+            <div class="section-header">
+                <p class="section-subtitle">OUR FLEET</p>
+                <h2 class="section-title">Discover Our Yachts</h2>
+                <p class="section-description">Speedboats for an active day, premium yachts for events and luxury cruising. Filter by size, capacity or type.</p>
+            </div>
+
+            <div class="filters-container">
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label class="filter-label">Boat Type</label>
+                        <select id="filterCategory" class="filter-select">
+                            <option value="">All Types</option>
+                            <option value="Speedboats / Luxury Boats">Speedboats / Luxury Boats</option>
+                            <option value="Yachts / Luxury Yachts">Yachts / Luxury Yachts</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Size (FT)</label>
+                        <select id="filterSize" class="filter-select">
+                            <option value="">All Sizes</option>
+                            <option value="28">28 FT</option>
+                            <option value="29">29 FT</option>
+                            <option value="32">32 FT</option>
+                            <option value="34">34 FT</option>
+                            <option value="35">35 FT</option>
+                            <option value="38">38 FT</option>
+                            <option value="39">39 FT</option>
+                            <option value="40">40 FT</option>
+                            <option value="41">41 FT</option>
+                            <option value="42">42 FT</option>
+                            <option value="43">43 FT</option>
+                            <option value="45">45 FT</option>
+                            <option value="46">46 FT</option>
+                            <option value="48">48 FT</option>
+                            <option value="55">55 FT</option>
+                            <option value="56">56 FT</option>
+                            <option value="58">58 FT</option>
+                            <option value="61">61 FT</option>
+                            <option value="62">62 FT</option>
+                            <option value="70">70 FT</option>
+                            <option value="82">82 FT</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label class="filter-label">Capacity</label>
+                        <select id="filterCapacity" class="filter-select">
+                            <option value="">Any Capacity</option>
+                            <option value="8">Up to 8 People</option>
+                            <option value="10">Up to 10 People</option>
+                            <option value="12">Up to 12 People</option>
+                            <option value="14">Up to 14 People</option>
+                            <option value="16">Up to 16 People</option>
+                            <option value="18">Up to 18 People</option>
+                            <option value="20">Up to 20 People</option>
+                            <option value="24">Up to 24 People</option>
+                            <option value="28">Up to 28 People</option>
+                            <option value="35">Up to 35 People</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-buttons">
+                    <button class="filter-btn filter-btn-secondary" onclick="clearFilters()">Clear Filters</button>
+                    <button class="filter-btn filter-btn-primary" onclick="applyFilters()">Apply Filters</button>
+                </div>
+            </div>
+
+            <div id="boats-container" class="boats-grid"></div>
+        </div>
+    </section>
+
+    <section class="consultation-form">
+        <div class="form-container">
+            <h2 class="form-title">Request a Quote</h2>
+            <p class="form-description">Fill out the form and we'll send your request directly to WhatsApp.</p>
+            <form id="consultationForm" class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Boat Type</label>
+                    <select id="formBoatType" class="form-select" required>
+                        <option value="">Select boat type</option>
+                        <option value="Speedboat">Speedboat / Luxury Boat</option>
+                        <option value="Yacht">Yacht / Luxury Yacht</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Size (FT)</label>
+                    <select id="formSize" class="form-select" required>
+                        <option value="">Select size</option>
+                        <option>28 FT</option><option>29 FT</option><option>32 FT</option>
+                        <option>34 FT</option><option>35 FT</option><option>38 FT</option>
+                        <option>39 FT</option><option>40 FT</option><option>41 FT</option>
+                        <option>42 FT</option><option>43 FT</option><option>45 FT</option>
+                        <option>46 FT</option><option>48 FT</option><option>55 FT</option>
+                        <option>56 FT</option><option>58 FT</option><option>61 FT</option>
+                        <option>62 FT</option><option>70 FT</option><option>82 FT</option>
+                        <option>Other / Not sure</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Number of People</label>
+                    <input type="number" id="formPeople" class="form-input" placeholder="Enter number of people" min="1" max="35" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Desired Date</label>
+                    <input type="date" id="formDate" class="form-input" required>
+                </div>
+                <button type="submit" class="form-submit">
+                    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Send to WhatsApp
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="section-container">
+            <div class="footer-logo">BrayanRentals</div>
+            <p class="footer-text">Luxury Concierge &amp; Travel Advisor in Cartagena, Colombia 🇨🇴</p>
+            <div class="footer-bottom"><p>&copy; 2026 BrayanRentals. All rights reserved.</p></div>
+        </div>
+    </footer>
+
+    <script src="boats.js"></script>
+    <script src="catalog-render.js"></script>
+    <script>
+        const I18N = {
+            bookCta: 'Book via WhatsApp',
+            ctaText: name => `Hello, I came from your website and I'm interested in ${name}.`,
+        };
+
+        function applyFilters() {
+            const cat = document.getElementById('filterCategory').value;
+            const size = document.getElementById('filterSize').value;
+            const cap = document.getElementById('filterCapacity').value;
+            renderBoats(boats.filter(b => {
+                if (cat && b.category !== cat) return false;
+                if (size && !b.size.includes(size)) return false;
+                if (cap) {
+                    const m = b.capacity.match(/\d+/);
+                    if (m && parseInt(m[0]) > parseInt(cap)) return false;
+                }
+                return true;
+            }));
+        }
+
+        function clearFilters() {
+            document.getElementById('filterCategory').value = '';
+            document.getElementById('filterSize').value = '';
+            document.getElementById('filterCapacity').value = '';
+            renderBoats(boats);
+        }
+
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const v = id => document.getElementById(id).value;
+            const msg = `Hello, I came from your website and I would like to request a quote:\n\nBoat Type: ${v('formBoatType')}\nSize: ${v('formSize')}\nNumber of People: ${v('formPeople')}\nDesired Date: ${v('formDate')}`;
+            window.open(`https://wa.me/573146263274?text=${encodeURIComponent(msg)}`, '_blank');
+        });
+
+        const hb = document.getElementById('hamburger'), nm = document.getElementById('navMenu');
+        hb.addEventListener('click', () => { hb.classList.toggle('active'); nm.classList.toggle('active'); });
+
+        document.addEventListener('DOMContentLoaded', () => renderBoats(boats));
+    </script>
+</body>
+</html>
