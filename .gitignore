@@ -1,6 +1,7 @@
-# Bandeja de entrada de actualizaciones (Drive)
-# Se procesa con `node normalize-actualizaciones.cjs` y luego se borra.
+# Bandejas de entrada del dueño (Drive). Contenido temporal que se procesa
+# y luego se borra; nunca debería commitearse.
 actualizaciones/
+actualizacion/
 
 # OS
 .DS_Store

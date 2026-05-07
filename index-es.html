@@ -182,7 +182,7 @@
 
                 <a href="traslados.html" class="service-card reveal" id="service-transfers">
                     <div class="service-image-wrap" style="background:#000;">
-                        <img alt="Traslados Premium" class="service-image" loading="lazy">
+                        <img src="img/portada-transfers-card.jpg" alt="Traslados Premium" class="service-image" loading="lazy">
                         <div class="service-image-overlay"></div>
                         <div class="service-image-label">
                             <span class="eyebrow">Traslados Premium</span>
@@ -285,12 +285,7 @@
             item.addEventListener('click', () => { hb.classList.remove('active'); nm.classList.remove('active'); });
         });
 
-        const tImg = document.querySelector('#service-transfers .service-image');
-        if (tImg && typeof transfers !== 'undefined' && transfers.length) {
-            const sprinter = transfers.find(t => t.slug === 'sprinter-black-13-18-people') || transfers[0];
-            tImg.src = sprinter.images[0];
-            tImg.alt = sprinter.name;
-        }
+        // El card de Traslados usa portada fija (img/portada-transfers-card.jpg).
         const dImg = document.querySelector('#service-daytrips .service-image');
         if (dImg && typeof dayTrips !== 'undefined' && dayTrips.length) {
             const photo = dayTrips.find(d => d.type === 'image') || dayTrips[0];
